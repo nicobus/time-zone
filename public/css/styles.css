@@ -1,0 +1,133 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.hamburguer-menu i {
+    color: red;
+    font-size: 28px;
+}
+.separador{
+    font-size: 20px;
+}
+.linea{
+    border-top: 3px solid orangered;
+    width: 45px;
+    display: inline-block;
+    height: 10px;
+
+}
+
+.menu-session a {
+    text-decoration: none;
+    color: black;
+}
+
+.banner-ppal {
+    z-index: -2;
+    background-color: #f0f0f2;
+}
+
+.banner-title {
+    font-size: 33px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.banner-text {
+    font-size: 18px;
+}
+
+.button {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.watch {
+    width: 300px;
+   
+}
+.novedades-title, .promociones-title{
+    font-size: 28px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.link-product-detail{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.card-basic{
+    text-align: center;
+}
+.precio{
+    color: red;
+    font-weight: 600;
+    font-size: 28;
+}
+
+
+.bg-footer{
+    background-color:rgb(151, 151, 151);
+}
+.panel-suscripcion h4{
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 575px) {
+    .menu-session {
+        font-size: 18px;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .menu-session {
+        position: absolute;
+        top: 15px;
+        right: 5%;
+        padding-right: 25px;
+    }
+
+    .img-height-650px{
+        object-fit: cover;
+        width: 100%;
+        height: 650px;
+    }
+    .img-height-300px{
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .menu-session {
+        font-size: 22px;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: contents !important;
+        font-size: 20px;
+    }
+
+    .banner-title {
+        font-size: 60px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .banner-text {
+        font-size: 28px;
+    }
+    .watch-container{
+        text-align: center;
+    }
+
+}

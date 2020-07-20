@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
 class HomeController extends Controller
 {
@@ -11,10 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*   public function __construct()
     {
         $this->middleware('auth');
-    }
+    } */
 
     /**
      * Show the application dashboard.
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $novedades = Producto::where("novedad", "=", "1")->inRandomOrder()->take(4)->get();
+        $ofertas = Producto::where("oferta", "=", "1")->inRandomOrder()->take(4)->get();
+        $vac = compact("ofertas", "novedades");
+
+        return view('pages.home', $vac);
     }
 }
