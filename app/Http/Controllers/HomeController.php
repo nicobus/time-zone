@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $novedades = Producto::where("novedad", "=", "1")->inRandomOrder()->take(4)->get();
-        $ofertas = Producto::where("oferta", "=", "1")->inRandomOrder()->take(4)->get();
+        $novedades = Producto::novedades()->inRandomOrder()->take(4)->get();
+        $ofertas = Producto::ofertas()->inRandomOrder()->take(4)->get();
         $vac = compact("ofertas", "novedades");
 
         return view('pages.home', $vac);

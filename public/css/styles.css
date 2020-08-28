@@ -1,11 +1,36 @@
 body {
     font-family: "Roboto", sans-serif;
+    background-color: #FFFFFF;
 }
-
 .hamburguer-menu i {
     color: red;
     font-size: 28px;
 }
+.capitalize{
+    text-transform: capitalize;
+}
+.bg-red{
+    background-color: red;
+}
+.banner-ppal {
+    background-color: #f0f0f2;
+}
+.tienda-category{
+    background-image: url('/img/bg-category.png');
+}
+.banner-title {
+    font-size: 33px;
+}
+.font-josefin-sans {
+    font-family: 'Josefin Sans', sans-serif;
+}
+.banner-text {
+    font-size: 18px;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+
 .separador{
     font-size: 20px;
 }
@@ -17,35 +42,8 @@ body {
 
 }
 
-.menu-session a {
-    text-decoration: none;
-    color: black;
-}
-
-.banner-ppal {
-    z-index: -2;
-    background-color: #f0f0f2;
-}
-
-.banner-title {
-    font-size: 33px;
-    font-family: 'Josefin Sans', sans-serif;
-}
-.banner-text {
-    font-size: 18px;
-}
-
-.button {
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-.watch {
-    width: 300px;
-   
-}
-.novedades-title, .promociones-title{
-    font-size: 28px;
-    font-family: 'Josefin Sans', sans-serif;
+.card-basic{
+    text-align: center;
 }
 .link-product-detail{
     position: absolute;
@@ -55,16 +53,10 @@ body {
     height: 100%;
     z-index: 10;
 }
-.card-basic{
-    text-align: center;
-}
 .precio{
     color: red;
     font-weight: 600;
-    font-size: 28;
 }
-
-
 .bg-footer{
     background-color:rgb(151, 151, 151);
 }
@@ -72,47 +64,43 @@ body {
     font-family: 'Old Standard TT', serif;
     text-align: center;
 }
-a{
+.panel-register-link{
+    background-image: linear-gradient(90deg, #B08EAD 0%, #4B3049 64%, #B08EAD 100%);
+}
+.bg-suscripcion{
+    background-color: #182D4C;
+}
+.bg-white{
+    background-color: #FFFFFF;
+}
+.link-white{
     color: white;
     text-decoration: none;
 }
 
 @media (max-width: 575px) {
-    .menu-session {
-        font-size: 18px;
-        position: absolute;
-        top: 85px;
-        right: 0;
-        z-index: -1;
-    }
 }
 
 @media (min-width: 576px) and (max-width: 991px) {
-    .menu-session {
-        position: absolute;
-        top: 15px;
-        right: 5%;
-        padding-right: 25px;
-    }
 
-    .img-height-650px{
-        object-fit: cover;
-        width: 100%;
-        height: 650px;
-    }
     .img-height-300px{
         object-fit: cover;
         width: 100%;
         height: 300px;
     }
+    .img-height-650px{
+        object-fit: cover;
+        width: 100%;
+        height: 650px;
+    }
 }
 
-@media (min-width: 992px) {
-
-    .menu-session {
-        font-size: 22px;
+@media (min-width: 992px) and (max-width: 1199px) {
+    .img-height-650px{
+        object-fit: cover;
+        width: 100%;
+        height: 650px;
     }
-
     .navbar-expand-lg .navbar-collapse {
         display: contents !important;
         font-size: 20px;
@@ -129,5 +117,51 @@ a{
     .watch-container{
         text-align: center;
     }
+    .img-height-317px{
+        object-fit: cover;
+        width: 100%;
+        height: 317px;
+    }
+  
+}
+@media (min-width: 1200px){
+    .img-height-650px{
+        object-fit: cover;
+        width: 100%;
+        height: 650px;
+    }
 
+    .menu-session {
+        font-size: 22px;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: contents !important;
+        font-size: 20px;
+    }
+
+
+    .banner-title {
+        font-size: 60px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .banner-text {
+        font-size: 28px;
+    }
+    .watch{
+        height: 600px;
+    }
+    .watch{
+        text-align: center;
+        object-fit: contain;
+    }
+    .img-height-317px{
+        object-fit: cover;
+        width: 100%;
+        height: 317px;
+    }
+    .navbar-brand img{
+        width: 180px;
+    }
 }

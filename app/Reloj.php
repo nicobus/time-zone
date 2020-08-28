@@ -11,7 +11,11 @@ class Reloj extends Model
     public $timestamps = "false";
     public $guarded = [];
     
-    public function producto(){
-        return $this->hasOne('App\Producto', 'producto_id');
+    /* public function producto(){
+        return $this->belongsTo('App\Reloj', 'id');
+    } */
+
+    public function scopeRelojPorProductoId($query, $id){
+        return $query->where('producto_id', '=', $id);
     }
 }

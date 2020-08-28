@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // view()->share('marcas', \App\Marca::all());
+        view()->share('categorias', \App\Categoria::all());
+        view()->share('marcas', \App\Marca::all());
     }
 }

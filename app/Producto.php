@@ -20,6 +20,22 @@ class Producto extends Model
     }
 
     public function reloj(){
-        return $this->belongsTo('App\ProductoReloj', 'Id');
+        return $this->hasOne('App\Reloj', 'producto_id', 'id');
+    }
+
+    public function scopeDisponibles($query){
+        return $query->where('status', '=', true)->where('stock', '>', 0);
+    }
+    public function scopeNoDisponibles($query){
+        return $query->where('status', '=', false);
+    }
+    public function scopeSinStock($query){
+        return $query->where('stock', '=', 0);
+    }
+    public function scopeNovedades($query){
+        return $query->where('novedad', '=', '1')->disponibles();
+    }
+    public function scopeOfertas($query){
+        return $query->where('oferta', '=', '1')->disponibles();
     }
 }

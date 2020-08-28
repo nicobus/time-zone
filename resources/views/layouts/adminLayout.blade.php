@@ -9,16 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin-styles.css">
     <title>
         @yield('titulo')
     </title>
 </head>
 
 <body>
-    @include('layouts.header')
     @yield('contenidoPrincipal')
-    @include('layouts.footer')
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
