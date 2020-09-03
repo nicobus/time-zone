@@ -48,4 +48,20 @@ Route::get('/admin/productos/editar/{id}', 'ProductoController@editarReloj')->na
 
 Route::put('/admin/productos/editar/{id}', 'ProductoController@updateReloj')->name('actualizarReloj');
 
-Route::delete('/admin/eliminarproducto', 'ProductoController@destroyReloj')->name('eliminarProductoAdmin');
+Route::post('/admin/eliminarproducto', 'ProductoController@destroyReloj')->name('eliminarProductoAdmin');
+
+Route::post('/admin/reestablecerproducto', 'ProductoController@reestablecerProducto')->name('reestablecerProducto');
+
+Route::get('/admin/buscarProducto', 'ProductoController@crearBusqueda')->name('crearBusqueda');
+
+Route::get('/admin/buscar', 'ProductoController@resultadosBusqueda')->name('resultadosBusqueda');
+
+Route::get('/admin/usuarios/lista', "UserController@listAdmin")->name('listaUsuarios');
+
+Route::get('/admin/Usuarios/agregar', 'UserController@createUser')->name('agregarUsuario');
+
+Route::get('/admin/Usuarios/editar/{id}', 'UserController@editarUser')->name('editarUsuario');
+
+Route::get('/admin/buscarUsuario', 'UserController@crearBusqueda')->name('crearBusquedaUsuario');
+
+Route::get('/admin/resultadosbusquedausuarios', 'UserController@resultadosBusqueda')->name('resultadosBusquedaUsuarios');

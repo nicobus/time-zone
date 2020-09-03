@@ -6,7 +6,7 @@ Time Zone | {{$titulo}}
 <section>
   @include('admin.sidebarAdmin')
   <div class="main-body-content">
-  @include('partials._tablaProductos')
+  @include('partials._tablaUsuarios')
   </div>
 </section>
 @endsection

@@ -16,18 +16,20 @@
                 <ul class="sub-menu collapse" id="products">
                     <li class="active"><a href="{{route('listaProductosAdmin')}}">Lista Productos</a></li>
                     <li><a href="{{route('agregarProductoAdmin')}}">Agregar Producto</a></li>
-                    <li><a href="#">Buscar Producto</a></li>
+                    <li><a href="{{route('crearBusqueda')}}">Buscar Producto</a></li>
                     <li><a href="{{route('listaProductosNoDisponiblesAdmin')}}">Productos no disponibles</a></li>
                     <li><a href="{{route('listaProductosSinStockAdmin')}}">Productos sin stock</a></li>
                     
                 </ul>
 
-
-                 <li>
-                  <a href="#">
-                  <i class="fa fa-users fa-lg"></i> Usuarios
-                  </a>
+                <li  data-toggle="collapse" data-target="#users" class="collapsed active">
+                  <a href="#"><i class="fa fa-users fa-lg"></i> Usuarios <span class="arrow"></span></a>
                 </li>
+                <ul class="sub-menu collapse" id="users">
+                    <li class="active"><a href="{{route('listaUsuarios')}}">Lista Usuarios</a></li>
+                    <li><a href="{{route('crearBusquedaUsuario')}}">Buscar Usuario</a></li>
+                    
+                </ul>
             </ul>
      </div>
 </div>

@@ -1,6 +1,6 @@
 
     <h1 class="p-3">
-        Lista de productos
+        {{$titulo}}
     </h1>
  
     <div class="table-responsive bg-light">
@@ -26,13 +26,22 @@
                     <a href="{{route('editarReloj', ['id'=>$producto->id])}}">
                         <i class="fa fa-pencil m-2" aria-hidden="true"></i>
                     </a>
+                    @if ($producto->status == true)
                     <form class="form-eliminar d-inline-flex" action="{{route('eliminarProductoAdmin')}}" method="POST">
                         @csrf
-                        @method('DELETE')
                         <input type="hidden" name="id" value="{{$producto->id}}">
                             <button type="submit" class="btn btn-danger fa fa-trash btn-eliminar">
                             </button>
                     </form>
+                    @else
+                    <form class="form-reestablecer d-inline-flex" action="{{route('reestablecerProducto')}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$producto->id}}">
+                            <button type="submit" class="btn btn-primary btn-reestablecer"><i class="fa fa-plus"></i>
+                            </button>
+                    </form>
+                    @endif
+                    
                 </td>
             </tr>
             @endforeach

@@ -35,7 +35,7 @@ class ProductoController extends Controller
     }
     public function listAdmin(){
         $productos = Producto::disponibles()->paginate(8);
-        $titulo = 'Todos los productos';
+        $titulo = 'Lista de productos';
         $vac = compact('productos', 'titulo');
         return view('admin.listaProductos', $vac);
     }
@@ -141,6 +141,14 @@ class ProductoController extends Controller
         return redirect(route('listaProductosAdmin'));
     }
 
+    public function reestablecerProducto(Request $req){
+        $producto = Producto::find($req['id']);
+        $producto->status = true;
+        $producto->save();
+        return redirect(route('listaProductosAdmin'));
+    }
+
+
     public function listNoDisponiblesAdmin(){
         $productos = Producto::noDisponibles()->paginate(8);
         $titulo = 'Productos no disponibles';
@@ -153,6 +161,19 @@ class ProductoController extends Controller
         $titulo = 'Productos sin stock';
         $vac = compact('productos', 'titulo');
         return view('admin.listaProductos', $vac);
+    }
+    public function crearBusqueda(){
+        $titulo = 'Busqueda producto';
+        $vac = compact('titulo');
+        return view('admin.busquedaProducto', $vac);
+    }
+    public function resultadosBusqueda(Request $req){
+        $titulo = 'Busqueda producto';
+        $campo = $req['busqueda'];
+        $productos = Producto::select('productos.*')->join("marcas", "marca_id","=", "marcas.id")
+        ->where('marcas.nombre', "like", "%$campo%")->orWhere('productos.id', '=', $campo)->orWhere('productos.modelo', 'like', "%$campo%")->paginate(8);
+        $vac = compact('titulo', 'productos');
+        return view('admin.busquedaProducto', $vac);
     }
 
 }

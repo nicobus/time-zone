@@ -1,6 +1,6 @@
 @extends('layouts.adminLayout')
 @section('titulo')
-Time Zone | Admin
+Time Zone | {{$titulo}}
 @endsection
 @section('contenidoPrincipal')
 <section>
