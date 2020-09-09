@@ -65,3 +65,11 @@ Route::get('/admin/Usuarios/editar/{id}', 'UserController@editarUser')->name('ed
 Route::get('/admin/buscarUsuario', 'UserController@crearBusqueda')->name('crearBusquedaUsuario');
 
 Route::get('/admin/resultadosbusquedausuarios', 'UserController@resultadosBusqueda')->name('resultadosBusquedaUsuarios');
+
+Route::post('/carrito/add', 'CarritoController@agregar')->name('agregarAlCarrito');
+
+Route::get('/carrito', 'CarritoController@mostrar')->name('mostrarCarrito');
+
+Route::post('/carrito/eliminarproducto', 'CarritoController@eliminarProducto')->name('eliminarProductoCarrito');
+
+Route::post('/carrito/actualizar', 'CarritoController@actualizarProducto')->name('actualizarProductoCarrito');

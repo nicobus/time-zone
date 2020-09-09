@@ -1,9 +1,10 @@
 @extends('layouts.layout')
 @section('titulo')
-Time Zone | Carrito
+Time Zone | {{$titulo}}
 @endsection
 @section('contenidoPrincipal')
 <main>
-    @include('partials._cart')            
+    @dd($idProducto);           
 </main>
 @endsection
+
