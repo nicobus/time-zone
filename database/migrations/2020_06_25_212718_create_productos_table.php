@@ -28,6 +28,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre_imagen_3', 100)->nullable()->default(null);
             $table->integer('novedad')->nullable()->default(null);
             $table->integer('oferta')->nullable()->default(null);
+            $table->boolean('status')->default(true);
             
         });
             

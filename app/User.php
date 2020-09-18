@@ -42,6 +42,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role', 'role_id');
     }
 
+    public function compras(){
+        return $this->hasMany('App\Compra', 'user_id');
+    }
+
     public function hasRole($role)
 {
     if ($this->role->name == $role) {

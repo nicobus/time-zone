@@ -22,7 +22,10 @@ class Producto extends Model
     public function reloj(){
         return $this->hasOne('App\Reloj', 'producto_id', 'id');
     }
-
+    public function scopeProductosCategoria($query, $categoria){
+        return $query->select('productos.*')->join('categorias', 'categoria_id', '=', 'categorias.id')
+        ->where('categorias.nombre', '=', "$categoria")->disponibles();
+    }
     public function scopeDisponibles($query){
         return $query->where('status', '=', true)->where('stock', '>', 0);
     }

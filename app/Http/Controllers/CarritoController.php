@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
+
 class CarritoController extends Controller
 {
     public function agregar(Request $req){
@@ -53,4 +54,40 @@ class CarritoController extends Controller
        }
        return redirect(route('mostrarCarrito'));
     }
+
+    public function checkout(Request $req){
+    
+
+        \MercadoPago\SDK::setAccessToken('TEST-7142329171126517-091604-eee588f7f921b80dac32fcb5ac74ec2c-325139190');
+
+    $items = \Cart::session(Auth::user()->id)->getContent();
+    
+    $productosComprados = [];
+foreach($items as $producto) {
+    $item = new \MercadoPago\Item();
+    $item->id = $producto->id;
+    $item->title = $producto->name;
+    $item->description = $producto->associatedModel->descripcion;
+    $item->quantity = $producto->quantity;
+    $item->currency_id = "ARS";
+    $item->unit_price = $producto->price;
+    $productosComprados[] = $item; 
+}
+
+
+
+$preference = new \MercadoPago\Preference();
+    
+    $preference->items = $productosComprados;
+    $preference->back_urls = array(
+        "success" => route('success'),
+        "failure" => route('failure'),
+        "pending" => route('pending')
+    );
+    $preference->auto_return = "approved";
+    $preference->save();
+    return redirect($preference->init_point);  
+    
+   
+}
 }

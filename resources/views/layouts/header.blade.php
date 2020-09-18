@@ -22,15 +22,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categorias as $categoria)
-                            <a class="dropdown-item capitalize" href="#">{{$categoria->nombre}}</a>
+                            <a class="dropdown-item capitalize" href="{{route('productosPorCategoria', ['categoria-id'=>$categoria->nombre])}}">{{$categoria->nombre}}</a>
                         @endforeach
                         <a class="dropdown-item" href="{{route('productos')}}">Todos los productos</a>
-                        {{--  <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>  --}}
                     </div>
                 </li>
                 <li class="nav-item m-lg-3">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contacto</a>
+                    <a class="nav-link" href="{{route('contacto')}}" tabindex="-1" aria-disabled="true">Contacto</a>
                 </li>
             </ul>
         </div>

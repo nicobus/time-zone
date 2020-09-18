@@ -6,12 +6,20 @@ use Illuminate\Http\Request;
 use App\Producto;
 use App\Reloj;
 use App\Http\Requests\ProductoRequest;
+use App\Categoria;
 
 class ProductoController extends Controller
 {
     public function list(){
         $productos = Producto::disponibles()->paginate(8);
         $titulo = 'Todos los productos';
+        $vac = compact('productos', 'titulo');
+        return view('pages.listaProductos', $vac);
+    }
+    public function listPorCategoria($categoria){
+        $titulo = $categoria;
+        $productos = Producto::productosCategoria($categoria)->paginate(8);
+        
         $vac = compact('productos', 'titulo');
         return view('pages.listaProductos', $vac);
     }
@@ -29,7 +37,7 @@ class ProductoController extends Controller
     }
     public function show($id){
         $producto = Producto::find($id);
-        $titulo = $producto->marca->nombre.$producto->modelo;
+        $titulo = $producto->marca->nombre." ".$producto->modelo;
         $vac = compact('producto', 'titulo');
         return view('pages.detalleProducto', $vac);
     }

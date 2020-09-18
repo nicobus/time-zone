@@ -7,7 +7,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="card-body">
-           
+          
                 @foreach ($items as $item)
                 <!-- PRODUCT -->
                 <div class="row">
@@ -54,7 +54,7 @@
                     @csrf
                 <div class="pull-right">
                     <button type="submit" class="btn btn-outline-secondary pull-right">
-                        Actualizar Carrito
+                        Actualizar
                     </button>
                 </div>
             </form>
@@ -73,7 +73,12 @@
                 </div>
             </div>
             <div class="pull-right" style="margin: 10px">
-                <a href="" class="btn btn-success pull-right">Checkout</a>
+                <form action="{{route('checkout')}}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-success pull-right">Checkout</button>
+                </form>
+                
+
                 <div class="pull-right" style="margin: 5px">
                     Total price: <b>${{number_format(\Cart::getTotal(), 2, ',', '.')}}</b>
                 </div>

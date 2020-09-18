@@ -8,12 +8,20 @@
                 <h2 class="card-title">{{$producto->marca->nombre}} {{$producto->modelo}}</h2>
                 <div class="btn-compra d-inline mx-3">
                     <h3 class="precio d-inline">$ {{number_format($producto->precio, 2, ',', '.')}}</h3>
+                    {{--  hacer que si no inicio sesion lo lleve al log y una vez que inicio vuelva a la pagina donde estaba  --}}
+                    @if (Auth::check())
                     <form class="form-agregar-carrito d-inline-flex" action="{{route('agregarAlCarrito')}}" method="POST">
                         @csrf
                         <input type="hidden" name="id" value="{{$producto->id}}">
+                        
                         <input type="hidden" name="id_user" value="{{Auth::user()->id}}">
+                        
                         <button class="btn btn-success my-3 mx-5"><span class="fas fa-shopping-cart" aria-hidden="true"></span> Agregar al carrito</button>
                     </form>
+                    @else
+                        <a href="{{route('login', ['redirect_to'=>url()->current()])}}" class="btn btn-success my-3 mx-5"><span class="fas fa-shopping-cart" aria-hidden="true"></span> Agregar al carrito</a>
+                    @endif
+                    
                    
                 </div>  
                 <ul class="list-group list-group-flush">
