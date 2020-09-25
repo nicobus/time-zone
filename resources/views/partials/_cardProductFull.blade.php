@@ -5,10 +5,9 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h2 class="card-title">{{$producto->marca->nombre}} {{$producto->modelo}}</h2>
-                <div class="btn-compra d-inline mx-3">
+                <h2 class="card-title text-center">{{$producto->marca->nombre}} {{$producto->modelo}}</h2>
+                <div class="btn-compra text-center">
                     <h3 class="precio d-inline">$ {{number_format($producto->precio, 2, ',', '.')}}</h3>
-                    {{--  hacer que si no inicio sesion lo lleve al log y una vez que inicio vuelva a la pagina donde estaba  --}}
                     @if (Auth::check())
                     <form class="form-agregar-carrito d-inline-flex" action="{{route('agregarAlCarrito')}}" method="POST">
                         @csrf

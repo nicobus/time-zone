@@ -1,6 +1,13 @@
 <header class="header pt-3 bg-light">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand mr-md-auto" href="{{route('home')}}"><img src="/img/logo.png" alt="logo-time-zone"></a>
+        
+        @if (Auth::check())
+        <div class="ml-auto mr-1 d-lg-none">
+            <a href="{{route('mostrarCarrito')}}"><img src="/img/carrito.png" style="width:30px;" alt="imagen-carrito-compras"></a>
+        </div>
+    @endif
+        
         <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -13,7 +20,7 @@
                     <a class="nav-link m-lg-3" href="{{route('home')}}">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link m-lg-3" href="#">Sobre Nosotros</a>
+                    <a class="nav-link m-lg-3" href="{{route('sobreNosotros')}}">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item dropdown m-lg-3">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -34,14 +41,34 @@
         </div>
         <div class="menu-session d-none d-lg-block p-1">
             <ul class="nav">
-                <li class="nav-item ml-auto mr-2">
-                    <div class="">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                
+                
+                <li class="nav-item ml-auto mr-4">
+                    <form action="{{route('buscarProducto')}}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="search">
+                                <input type="text" class="form-control input-sm border-0 bg-light" maxlength="64" placeholder="Buscar..." name="busqueda">
+                                <button class="buscar-btn border-0 bg-light" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
                     </div>
+                    </form>
                 </li>
-                <li class="nav-item mx-2"><a href="{{route('login')}}"><i class="fa fa-user-o" aria-hidden="true"></i></a></li>
-                <li class="nav-item mx-2"><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                </li>
+                
+                <li class="nav-item mx-2">
+                    <a href="{{route('login')}}">
+                        <i class="fa fa-user-o" aria-hidden="true">
+                            </i>
+                        </a>
+                    </li>
+                @if (Auth::check())
+                    <li class="nav-item mx-2"><a href="{{route('mostrarCarrito')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                @else
+                <li class="nav-item mx-2"><a href="{{route('login', ['redirect_to'=>url()->current()])}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                @endif
+                
+                
             </ul>
         </div>
     </nav>

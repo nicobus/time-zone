@@ -1,6 +1,7 @@
+{{--  pagina de agregado de reloj a la base de datos  --}}
 @extends('layouts.adminLayout')
 @section('titulo')
-Time Zone | Admin
+Time Zone | Agregar reloj
 @endsection
 @section('contenidoPrincipal')
 <section>

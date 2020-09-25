@@ -1,10 +1,11 @@
 @extends('layouts.layout')
 @section('titulo')
-Time Zone | Carrito
+Time Zone | Contacto
 @endsection
 @section('contenidoPrincipal')
 <main>
-    <div class="container my-5">
+    @include('partials._titulo', ['titulo' => 'Contacto'])
+    <div class="container my-3">
         <div class="row">
             <div class="col-md-8">
                 <div>
@@ -13,7 +14,7 @@ Time Zone | Carrito
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nombre">
-                                    nombre</label>
+                                    Nombre</label>
                                 <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required="required" />
                             </div>
                             <div class="form-group">
@@ -51,15 +52,15 @@ Time Zone | Carrito
                     </form>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <form>
                 <legend><span class="glyphicon glyphicon-globe"></span> Nuestras oficinas</legend>
                 <address>
                     <strong>Time Zone</strong><br>
                     Calle Falsa 123<br>
-                    Sppringfield, NA XXXXX<br>
+                    Springfield, NA XXXXX<br>
                     <abbr title="Phone">
-                        P:</abbr>
+                        Tel:</abbr>
                     (123) 456-7890
                 </address>
                 <address>

@@ -2,39 +2,52 @@ body {
     font-family: "Roboto", sans-serif;
     background-color: #FFFFFF;
 }
+
 .hamburguer-menu i {
     color: red;
     font-size: 28px;
 }
-.capitalize{
+
+.capitalize {
     text-transform: capitalize;
 }
-.bg-red{
+
+.bg-red {
     background-color: red;
 }
+
 .banner-ppal {
     background-color: #f0f0f2;
 }
-.tienda-category{
+
+.tienda-category {
     background-image: url('/img/bg-category.png');
 }
+
 .banner-title {
     font-size: 33px;
 }
+
 .font-josefin-sans {
     font-family: 'Josefin Sans', sans-serif;
 }
+
 .banner-text {
     font-size: 18px;
 }
-.uppercase{
+
+.uppercase {
     text-transform: uppercase;
 }
+.img-product-basic{
+    object-fit: cover;
+}
 
-.separador{
+.separador {
     font-size: 20px;
 }
-.linea{
+
+.linea {
     border-top: 3px solid orangered;
     width: 45px;
     display: inline-block;
@@ -42,38 +55,46 @@ body {
 
 }
 
-.card-basic{
+.card-basic {
     text-align: center;
 }
-.link-product-detail{
+
+.link-product-detail {
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10;
 }
-.precio{
+
+.precio {
     color: red;
     font-weight: 600;
 }
-.bg-footer{
-    background-color:rgb(151, 151, 151);
+
+.bg-footer {
+    background-color: rgb(151, 151, 151);
 }
-.panel-suscripcion h4{
+
+.panel-suscripcion h4 {
     font-family: 'Old Standard TT', serif;
     text-align: center;
 }
-.panel-register-link{
+
+.panel-register-link {
     background-image: linear-gradient(90deg, #B08EAD 0%, #4B3049 64%, #B08EAD 100%);
 }
-.bg-suscripcion{
+
+.bg-suscripcion {
     background-color: #182D4C;
 }
-.bg-white{
+
+.bg-white {
     background-color: #FFFFFF;
 }
-.link-white{
+
+.link-white {
     color: white;
     text-decoration: none;
 }
@@ -116,7 +137,8 @@ body {
     background-clip: padding-box
 }
 
-.quantity .minus, .quantity .plus {
+.quantity .minus,
+.quantity .plus {
     line-height: 0;
     background-clip: padding-box;
     -webkit-border-radius: 0;
@@ -135,40 +157,145 @@ body {
     z-index: 3
 }
 
-.quantity .minus:hover, .quantity .plus:hover {
+.quantity .minus:hover,
+.quantity .plus:hover {
     background-color: #dad8da
 }
 
 .quantity .minus {
     bottom: 0
 }
+
 .shopping-cart {
     margin-top: 20px;
 }
 
-@media (max-width: 575px) {
+.about-details-cap h4 {
+
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #000a2d;
+    display: inline-block;
+    position: relative;
+    padding-left: 68px;
 }
+
+.about-details-cap h4::before {
+    position: absolute;
+    content: "";
+    width: 54px;
+    height: 2px;
+    background: #eb566c;
+    top: 0;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.about-details-cap p {
+    color: #464d65;
+    font-size: 14px;
+}
+.slider-height2{
+    background-image: url('/img/bg-category.png');
+    min-height: 260px;
+    background-repeat:no-repeat ;
+    background-position: center center;
+    
+}
+
+.slider-area{
+    overflow: hidden;
+}
+.slider-area .hero-cap{
+    font-size: 70px;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    
+     }
+
+     .hero-cap h2{
+        font-size: 28px;
+        font-weight: 700;
+        text-transform: capitalize;
+    
+        
+         }
+
+         #search {
+            float: right;
+            margin-top: 9px;
+            width: 250px;
+        }
+        
+        .search {
+            padding: 5px 0;
+            width: 230px;
+            height: 30px;
+            position: relative;
+            left: 10px;
+            float: left;
+            line-height: 22px;
+        }
+        
+            .search input {
+                position: absolute;
+                width: 0px;
+                float: Left;
+                margin-left: 210px;
+                -webkit-transition: all 0.7s ease-in-out;
+                -moz-transition: all 0.7s ease-in-out;
+                -o-transition: all 0.7s ease-in-out;
+                transition: all 0.7s ease-in-out;
+                height: 30px;
+                line-height: 18px;
+                padding: 0 2px 0 2px;
+                border-radius:1px;
+            }
+        
+                .search:hover input, .search input:focus {
+                    width: 200px;
+                    margin-left: 0px;
+                }
+        
+        .buscar-btn {
+            height: 30px;
+            position: absolute;
+            right: 0;
+            top: 5px;
+            border-radius:1px;
+        }
+        
 
 @media (min-width: 576px) and (max-width: 991px) {
 
-    .img-height-300px{
+    .img-height-300px {
         object-fit: cover;
         width: 100%;
         height: 300px;
     }
-    .img-height-650px{
+
+    .img-height-650px {
         object-fit: cover;
         width: 100%;
         height: 650px;
     }
+    .slider-height2{
+        min-height: 100px;
+    }
+   
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .img-height-650px{
+    .img-height-650px {
         object-fit: cover;
         width: 100%;
         height: 650px;
     }
+
     .navbar-expand-lg .navbar-collapse {
         display: contents !important;
         font-size: 20px;
@@ -182,18 +309,29 @@ body {
     .banner-text {
         font-size: 28px;
     }
-    .watch-container{
+
+    .watch-container {
         text-align: center;
     }
-    .img-height-317px{
+
+    .img-height-317px {
         object-fit: cover;
         width: 100%;
         height: 317px;
     }
-  
+    .slider-height2{
+        min-height: 100px;
+    }
+    
+    
+    .hero-cap h2{
+        font-size: 70px;
+    }
+
 }
-@media (min-width: 1200px){
-    .img-height-650px{
+
+@media (min-width: 1200px) {
+    .img-height-650px {
         object-fit: cover;
         width: 100%;
         height: 650px;
@@ -217,19 +355,34 @@ body {
     .banner-text {
         font-size: 28px;
     }
-    .watch{
+
+    .watch {
         height: 600px;
     }
-    .watch{
+
+    .watch {
         text-align: center;
         object-fit: contain;
     }
-    .img-height-317px{
+
+    .img-height-317px {
         object-fit: cover;
         width: 100%;
         height: 317px;
     }
-    .navbar-brand img{
+
+    .navbar-brand img {
         width: 180px;
+    }
+    .slider-height2{
+        min-height: 100px;
+    }
+    
+    .slider-area .hero__img{
+        position: relative;
+        height: 500px;
+    }
+    .hero-cap h2{
+        font-size: 28px;
     }
 }

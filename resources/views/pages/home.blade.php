@@ -24,7 +24,7 @@ Time Zone | Home
             @foreach ($novedades as $producto)
             @include('partials._cardProductBasic')
             @endforeach
-            <a class="btn btn-primary d-block mx-auto" href="{{route('productosCampo', ['campo'=>'novedades'])}}" role="button">Ver novedades</a>
+            <a class="btn btn-secondary d-block mx-auto" href="{{route('productosCampo', ['campo'=>'novedades'])}}" role="button">Ver novedades</a>
         </div>
     </div>
 
@@ -53,7 +53,7 @@ Time Zone | Home
             @foreach ($ofertas as $producto)
             @include('partials._cardProductBasic')
             @endforeach
-            <a class="btn btn-primary d-block mx-auto" href="{{route('productosCampo', ['campo'=>'ofertas'])}}" role="button">Ver ofertas</a>
+            <a class="btn btn-secondary d-block mx-auto" href="{{route('productosCampo', ['campo'=>'ofertas'])}}" role="button">Ver ofertas</a>
         </div>
     </div>
 </main>

@@ -45,19 +45,16 @@
                 </h3>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="link-white" href="#">Preguntas frecuentes</a>
+                        <a class="link-white" href="{{route('faqs')}}">¿Como comprar?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="link-white" href="#">¿Como comprar?</a>
+                        <a class="link-white" href="{{route('faqs')}}">Entrega</a>
                     </li>
                     <li class="nav-item">
-                        <a class="link-white" href="#">Entrega</a>
+                        <a class="link-white" href="{{route('faqs')}}">Devoluciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="link-white" href="#">Devoluciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link-white" href="#">Terminos y condiciones</a>
+                        <a class="link-white" href="{{route('faqs')}}">Terminos y condiciones</a>
                     </li>
                 </ul>
             </div>
@@ -67,13 +64,13 @@
                 </h3>
                 <ul class="redes-sociales nav flex-column">
                     <li class="nav-item">
-                        <a class="link-white" href="#">¿Quienes somos?</a>
+                        <a class="link-white" href="{{route('sobreNosotros')}}">¿Quienes somos?</a>
                     </li>
                     <li class="nav-item">
                         <a class="link-white" href="#">Visitanos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="link-white" href="#">Contacto</a>
+                        <a class="link-white" href="{{route('contacto')}}">Contacto</a>
                     </li>
                 </ul>
             </div>

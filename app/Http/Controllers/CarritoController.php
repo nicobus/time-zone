@@ -29,7 +29,6 @@ class CarritoController extends Controller
 
     public function mostrar(){
         $items = \Cart::session(Auth::user()->id)->getContent();
-        
         $vac = compact('items');
         return view('pages.carrito', $vac);
     }

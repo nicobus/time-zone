@@ -7,6 +7,7 @@ use App\Producto;
 use App\Reloj;
 use App\Http\Requests\ProductoRequest;
 use App\Categoria;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -24,7 +25,8 @@ class ProductoController extends Controller
         return view('pages.listaProductos', $vac);
     }
     public function listCampo($campo){
-        $productos = Producto::$campo()->paginate(8);
+    
+        $productos = Producto::novedades()->paginate(8);
         $titulo = $campo;
         $vac = compact('productos', 'titulo');
         return view('pages.listaProductos', $vac);
@@ -56,11 +58,12 @@ class ProductoController extends Controller
     }
 
     public function store(ProductoRequest $req){
+        
         $imagen1 = null;
         $imagen2 = null;
         $imagen3 = null;
         if ($req['imagen1'] != null) {
-            $imagen1 = basename($req->file("imagen1")->store("public"));
+             $imagen1 = basename($req->file("imagen1")->store("public"));
         }
         if ($req['imagen2'] != null) {
             $imagen2 = basename($req->file("imagen2")->store("public"));
@@ -181,7 +184,15 @@ class ProductoController extends Controller
         $productos = Producto::select('productos.*')->join("marcas", "marca_id","=", "marcas.id")
         ->where('marcas.nombre', "like", "%$campo%")->orWhere('productos.id', '=', $campo)->orWhere('productos.modelo', 'like', "%$campo%")->paginate(8);
         $vac = compact('titulo', 'productos');
-        return view('admin.busquedaProducto', $vac);
+        if (Auth::check()) {
+            if (Auth::user()->hasRole('admin')) {
+                return view('admin.busquedaProducto', $vac);
+            }
+        } else {
+            return view('pages.listaProductos', $vac);
+        }
+        
+        
     }
 
 }

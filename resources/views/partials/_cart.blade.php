@@ -1,8 +1,8 @@
 <div class="container">
     <div class="card shopping-cart">
-        <div class="card-header bg-dark text-light">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            Carrito de compras
+        <div class="card-header d-flex bg-dark text-light">
+                <i class="fa fa-shopping-cart mr-auto my-auto" aria-hidden="true">Carrito
+                </i>
             <a href="{{route('productos')}}" class="btn btn-outline-info btn-sm pull-right">Continuar comprando</a>
             <div class="clearfix"></div>
         </div>
@@ -22,7 +22,7 @@
                         </h4>
                     </div>
                     <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                        <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                        <div class="col-6 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
                             <h6><strong><span
                                         class="text-muted">$</span>{{number_format($item->price, 2, ',', '.')}}</strong>
                             </h6>
@@ -50,38 +50,36 @@
                 <hr>
                 <!-- END PRODUCT -->
                 @endforeach
-                <form action="{{route('actualizarProductoCarrito')}}" method="POST" id="form-update">
-                    @csrf
-                <div class="pull-right">
-                    <button type="submit" class="btn btn-outline-secondary pull-right">
-                        Actualizar
-                    </button>
-                </div>
+                    <form action="{{route('actualizarProductoCarrito')}}" method="POST" id="form-update">
+                        @csrf
+                    <div class="d-flex">
+                        <button type="submit" class="btn btn-outline-secondary ml-auto">
+                            Actualizar
+                        </button>
+                    </div>
             </form>
         </div>
 
 
         <div class="card-footer">
-            <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
+            <div class="">
                 <div class="row">
                     <div class="col-6">
-                        <input type="text" class="form-control" placeholder="cupone code">
+                        <input type="text" class="form-control" placeholder="codigo">
                     </div>
                     <div class="col-6">
-                        <input type="submit" class="btn btn-default" value="Use cupone">
+                        <input type="submit" class="btn btn-default" value="Usar cupon">
                     </div>
                 </div>
             </div>
-            <div class="pull-right" style="margin: 10px">
-                <form action="{{route('checkout')}}" method="post">
-                    @csrf
-                    <button type="submit" class="btn btn-success pull-right">Checkout</button>
-                </form>
-                
-
-                <div class="pull-right" style="margin: 5px">
+            <div style="margin: 10px" class="d-flex">
+                <div class="my-auto" style="margin: 5px">
                     Total price: <b>${{number_format(\Cart::getTotal(), 2, ',', '.')}}</b>
                 </div>
+                <form action="{{route('checkout')}}" method="post" class="ml-auto">
+                    @csrf
+                    <button type="submit" class="btn btn-success ml-auto">Checkout</button>
+                </form>
             </div>
         </div>
     </div>

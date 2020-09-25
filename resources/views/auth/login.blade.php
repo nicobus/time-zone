@@ -12,7 +12,7 @@ Time Zone | Login
                         <div>
                             <h2>Todavia no te registraste?</h2>
                             <p>Crea tu cuenta si aun no lo hiciste o inicia sesion para poder comprar nuestros productos.</p>
-                            <a href="#" class="btn btn-outline-light">Crear cuenta</a>
+                            <a href="{{ route('register') }}" class="btn btn-outline-light">Crear cuenta</a>
                         </div>
                     </div>
                 </div>
